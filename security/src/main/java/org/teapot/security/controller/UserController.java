@@ -3,6 +3,7 @@ package org.teapot.security.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.teapot.security.exception.ResourceNotFoundException;
 import org.teapot.security.model.User;
@@ -11,11 +12,12 @@ import org.teapot.security.security.CurrentUser;
 import org.teapot.security.security.UserPrincipal;
 
 @RestController
+@RequestMapping(value = "/user", consumes = "application/json", produces = "application/json")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/user/me")
+    @GetMapping("/me")
     @PreAuthorize("hasRole('USER')")
     public User getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
         return userRepository.findById(userPrincipal.getId())
