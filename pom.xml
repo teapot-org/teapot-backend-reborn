@@ -10,6 +10,7 @@
     <modules>
         <module>core</module>
         <module>security</module>
+        <module>swagger</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -25,6 +26,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <jiwt.version>0.9.1</jiwt.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
