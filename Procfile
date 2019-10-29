@@ -1,0 +1,1 @@
+web java -Dserver.port=$PORT -Dspring.security.oauth2.client.registration.google.clientSecret=$GOOGLE_SECRET -Dspring.security.oauth2.client.registration.facebook.clientSecret=$FACEBOOK_SECRET -Dspring.security.oauth2.client.registration.github.clientSecret=$GITHUB_SECRET -Dapp.auth.tokenSecret=$APP_SECRET $JAVA_OPTS -jar core/target/core-1.0-SNAPSHOT.jar
